@@ -1,0 +1,168 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8363,        160]
+NotebookOptionsPosition[      7738,        141]
+NotebookOutlinePosition[      8092,        157]
+CellTagsIndexPosition[      8049,        154]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"opnames", "=", 
+   RowBox[{"ToExpression", "/@", 
+    RowBox[{
+    "StringSplit", "[", 
+     "\"\<AngleBracket\nAssociation\nBracketingBar\nCeiling\n\
+DoubleBracketingBar\nFloor\nList\nAutoMatch\nSkeleton\nCurlyDoubleQuote\n\
+CurlyQuote\nFullwidthParenthesis\nDoubleAngleBracket\nFullwidthAngleBracket\n\
+FullwidthSquareBracket\nTortoiseShellBracket\nBlackLenticularBracket\n\
+WhiteCornerBracket\nCornerBracket\nFullwidthCurlyBracket\nNone\nNone\nNone\n\
+None\nNone\nNone\nNone\nNone\nMessageName\nSlot\nSlotSequence\nSlot\n\
+SlotSequence\nOut\nOut\nBlank\nBlankSequence\nBlankNullSequence\nBlank\n\
+BlankSequence\nBlankNullSequence\nBlank\nBlankSequence\nBlank\n\
+BlankNullSequence\nBlank\nBlankNullSequence\nBlank\nBlankSequence\nGet\n\
+InvisiblePrefixScriptBase\nInvisiblePostfixScriptBase\nPartialOverscriptBox\n\
+Overscript\nPartialUnderscriptBox\nUnderscript\nUnderoverscript\n\
+Underoverscript\nNone\nPartialSubscriptBox\nSubscript\nSubsuperscript\n\
+PatternTest\nInlinePart\nPart\nNone\nDecrement\nIncrement\nPreDecrement\n\
+PreIncrement\nComposition\nRightComposition\nPrefix\nInfix\nApply\nApply\nMap\
+\nMapAll\nFactorial\nFactorial2\nConjugate\nConjugateTranspose\nSuperDagger\n\
+Transpose\nDerivative\nStringJoin\nPower\nPartialSuperscriptBox\n\
+SuperscriptBox\nSubsuperscriptBox\nDoubleDownArrow\nDoubleLongLeftArrow\n\
+DoubleLongLeftRightArrow\nDoubleLongRightArrow\nDoubleUpArrow\n\
+DoubleUpDownArrow\nDownArrow\nDownArrowBar\nDownArrowUpArrow\nDownTeeArrow\n\
+LeftDownTeeVector\nLeftDownVector\nLeftDownVectorBar\nLeftUpDownVector\n\
+LeftUpTeeVector\nLeftUpVector\nLeftUpVectorBar\nLongLeftArrow\n\
+LongLeftRightArrow\nLongRightArrow\nReverseUpEquilibrium\nRightDownTeeVector\n\
+RightDownVector\nRightDownVectorBar\nRightUpDownVector\nRightUpTeeVector\n\
+RightUpVector\nRightUpVectorBar\nShortDownArrow\nShortUpArrow\nUpArrow\n\
+UpArrowBar\nUpArrowDownArrow\nUpDownArrow\nUpEquilibrium\nUpTeeArrow\nSqrt\n\
+RadicalBox\nSqrt\nCapitalDifferentialD\nDifferentialD\nDifferenceDelta\n\
+DiscreteRatio\nDiscreteShift\nLaplacian\nPartialD\nDel\nGradient\nSquare\n\
+Piecewise\nSmallCircle\nCircleDot\nNonCommutativeMultiply\nCross\nDot\n\
+TensorWedge\nTensorProduct\nPermutationProduct\nCurl\nDivergence\nMinusPlus\n\
+PlusMinus\nMinus\nPlus\nDivides\nPartialFractionBox\nFractionBox\nDivide\n\
+Backslash\nDiamond\nWedge\nVee\nCircleTimes\nCenterDot\nTimes\nStar\nProduct\n\
+ContinuedFractionK\nVerticalTilde\nCoproduct\nCap\nCup\nCircleMinus\n\
+CirclePlus\nSum\nIntegrate\nClockwiseContourIntegral\nContourIntegral\n\
+CounterClockwiseContourIntegral\nDoubleContourIntegral\nExpectationE\n\
+ProbabilityPr\nLimit\nMaxLimit\nMinLimit\nMinusPlus\nPlus\nPlusMinus\n\
+Subtract\nIntersection\nSpan\nSquareIntersection\nSquareUnion\nUnion\n\
+UnionPlus\nDirectedEdge\nUndirectedEdge\nCongruent\nCupCap\nDotEqual\nEqual\n\
+EqualTilde\nEquilibrium\nGreater\nGreaterEqual\nGreaterEqualLess\n\
+GreaterFullEqual\nGreaterGreater\nGreaterLess\nGreaterSlantEqual\n\
+GreaterTilde\nHumpDownHump\nHumpEqual\nLeftTriangle\nLeftTriangleBar\n\
+LeftTriangleEqual\nLess\nLessEqual\nLessEqualGreater\nLessFullEqual\n\
+LessGreater\nLessLess\nLessSlantEqual\nLessTilde\nNestedGreaterGreater\n\
+NestedLessLess\nNotCongruent\nNotCupCap\nNotEqualTilde\nNotGreater\n\
+NotGreaterEqual\nNotGreaterFullEqual\nNotGreaterGreater\nNotGreaterLess\n\
+NotGreaterSlantEqual\nNotGreaterTilde\nNotHumpDownHump\nNotHumpEqual\n\
+NotLeftTriangle\nNotLeftTriangleBar\nNotLeftTriangleEqual\nNotLess\n\
+NotLessEqual\nNotLessFullEqual\nNotLessGreater\nNotLessLess\n\
+NotLessSlantEqual\nNotLessTilde\nNotNestedGreaterGreater\nNotNestedLessLess\n\
+NotPrecedes\nNotPrecedesEqual\nNotPrecedesSlantEqual\nNotPrecedesTilde\n\
+NotRightTriangle\nNotRightTriangleBar\nNotRightTriangleEqual\nNotSucceeds\n\
+NotSucceedsEqual\nNotSucceedsSlantEqual\nNotSucceedsTilde\nNotTilde\n\
+NotTildeEqual\nNotTildeFullEqual\nNotTildeTilde\nPrecedes\nPrecedesEqual\n\
+PrecedesSlantEqual\nPrecedesTilde\nProportion\nProportional\n\
+ReverseEquilibrium\nRightTriangle\nRightTriangleBar\nRightTriangleEqual\n\
+Succeeds\nSucceedsEqual\nSucceedsSlantEqual\nSucceedsTilde\nTilde\nTildeEqual\
+\nTildeFullEqual\nTildeTilde\nUnequal\nDoubleVerticalBar\n\
+NotDoubleVerticalBar\nNotVerticalBar\nVerticalBar\nDoubleLeftArrow\n\
+DoubleLeftRightArrow\nDoubleRightArrow\nDownLeftRightVector\n\
+DownLeftTeeVector\nDownLeftVector\nDownLeftVectorBar\nDownRightTeeVector\n\
+DownRightVector\nDownRightVectorBar\nLeftArrow\nLeftArrowBar\n\
+LeftArrowRightArrow\nLeftRightArrow\nLeftRightVector\nLeftTeeArrow\n\
+LeftTeeVector\nLeftVector\nLeftVectorBar\nLowerLeftArrow\nLowerRightArrow\n\
+RightArrow\nRightArrowBar\nRightArrowLeftArrow\nRightTeeArrow\nRightTeeVector\
+\nRightVector\nRightVectorBar\nShortLeftArrow\nShortRightArrow\n\
+UpperLeftArrow\nUpperRightArrow\nSameQ\nUnsameQ\nDistributed\nElement\n\
+NotElement\nNotReverseElement\nNotSquareSubset\nNotSquareSubsetEqual\n\
+NotSquareSuperset\nNotSquareSupersetEqual\nNotSubset\nNotSubsetEqual\n\
+NotSuperset\nNotSupersetEqual\nReverseElement\nSquareSubset\n\
+SquareSubsetEqual\nSquareSuperset\nSquareSupersetEqual\nSubset\nSubsetEqual\n\
+Superset\nSupersetEqual\nExists\nForAll\nNotExists\nNot\nAnd\nNand\nXnor\nXor\
+\nNor\nOr\nEquivalent\nRoundImplies\nImplies\nConditioned\nDoubleRightTee\n\
+RightTee\nDoubleLeftTee\nDownTee\nLeftTee\nUpTee\nPerpendicular\nSuchThat\n\
+Repeated\nRepeatedNull\nAlternatives\nPattern\nOptional\nStringExpression\n\
+Condition\nTwoWayRule\nRuleDelayed\nRule\nReplaceAll\nReplaceRepeated\n\
+TimesBy\nSubtractFrom\nDivideBy\nAddTo\nFunction\nColon\nPostfix\n\
+VerticalSeparator\nTherefore\nBecause\nFunction\nSet\nSetDelayed\nTagSet\n\
+TagSetDelayed\nTagUnset\nUnset\nUpSet\nUpSetDelayed\nPut\nPutAppend\n\
+CompoundExpression\nCompoundExpression\nFormBox\nComma\>\"", "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.746271739307049*^9, 3.746271813510333*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d19219fd-dfbc-4214-a495-5946ad680cb7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<OutputOfPrecedence.csv\>\""}], "}"}], "]"}], ",", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"opnames", ",", " ", 
+      RowBox[{"Precedence", "/@", "opnames"}]}], "}"}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.746271818626873*^9, 3.7462718284977818`*^9}, {
+  3.746272107022003*^9, 3.746272124497403*^9}, {3.746272162188239*^9, 
+  3.746272216420001*^9}, {3.746272249044119*^9, 3.746272262891075*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"49899803-c28e-4136-94cd-f2b888368b8c"],
+
+Cell[BoxData["\<\"/Users/rjacobson/Google \
+Drive/Development/FoxySheep/Reference/OutputOfPrecedence.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.746271830969243*^9, 3.746272125222789*^9, {3.74627221776598*^9, 
+   3.746272264164877*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"fd7e2ee0-f7a6-44ab-bef2-31540ecb1545"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.746272088858962*^9, 
+  3.746272102980308*^9}},ExpressionUUID->"b83ad036-5e07-45b3-b11e-\
+fabd5ba17211"]
+},
+WindowSize->{808, 911},
+WindowMargins->{{588, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5969, 86, 12478, "Input",ExpressionUUID->"d19219fd-dfbc-4214-a495-5946ad680cb7"],
+Cell[CellGroupData[{
+Cell[6552, 110, 697, 16, 140, "Input",ExpressionUUID->"49899803-c28e-4136-94cd-f2b888368b8c"],
+Cell[7252, 128, 315, 5, 173, "Output",ExpressionUUID->"fd7e2ee0-f7a6-44ab-bef2-31540ecb1545"]
+}, Open  ]],
+Cell[7582, 136, 152, 3, 46, "Input",ExpressionUUID->"b83ad036-5e07-45b3-b11e-fabd5ba17211"]
+}
+]
+*)
+

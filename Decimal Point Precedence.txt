@@ -1,0 +1,21 @@
+`1//..9`  is `` ReplaceRepeated[1, 0.9`] ``
+`1//.9` is `ReplaceRepeated[1, 9]` should be `0.9[1]`
+`1/.9` is `` Times[1, Power[0.9`, -1]] ``
+`1...9` is `9 ((1)...)` or `Hold[Times[RepeatedNull[1], 9]]`
+`7//.9` is `ReplaceRepeated[7, 9]`
+`7// .9` is `` 0.9`[7] ``
+`1/.1->2` is `10. -> 2`
+
+`7// .9` is ``0.9`[7]``
+
+
+``b; 7`b`` is `7. b`
+`_.1` is `Times[Optional[Blank[]], 1]`
+
+
+Rule: If `.` can be interpreted as part of an operator, it will be. The only exceptions are:
+	b=.1
+	a/:b=.1
+	a/.1
+	a.b (* The Dot operator. *)
+This places the precedence of the decimal point between `//.` and `/.`—excepting for the `Dot` operator itself.
